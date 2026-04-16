@@ -783,11 +783,6 @@ footer{background:#03030d;border-top:1px solid var(--border);padding:60px 60px 2
 </div>
 
 <!-- ══════════════ TOPBAR ══════════════ -->
-<div class="topbar" id="topbar">
-  <span class="topbar-text">🎮 <strong>30% OFF</strong> your first month — Use code <strong>CASTLE30</strong></span>
-  <a href="#trial" class="topbar-cta">Claim Now →</a>
-  <button class="topbar-close" onclick="this.closest('.topbar').style.display='none'">✕</button>
-</div>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav id="mainNav">
@@ -799,12 +794,8 @@ footer{background:#03030d;border-top:1px solid var(--border);padding:60px 60px 2
     <div class="nav-item">
       <a href="games.html">Game Servers <span class="arr">▾</span></a>
       <div class="dropdown">
-        <a href="games.html#minecraft">⛏️ Minecraft</a>
-        <a href="games.html#rust">🔫 Rust</a>
-        <a href="games.html#ark">🦕 ARK: Survival</a>
-        <a href="games.html#fivem">🏙️ FiveM</a>
-        <a href="games.html#valheim">🌊 Valheim</a>
-        <a href="games.html#dayz">☠️ DayZ</a>
+        <a href="games.html#minecraft">⛏️ Budget-Minecraft</a>
+        <a href="games.html#rust">🔫 Premium-Minecraft</a>
         <a href="games.html">View All Games →</a>
       </div>
     </div>
@@ -813,7 +804,6 @@ footer{background:#03030d;border-top:1px solid var(--border);padding:60px 60px 2
       <div class="dropdown">
         <a href="vps.html#linux">🖥️ Intel VPS</a>
         <a href="vps.html#windows">🪟 AMD VPS</a>
-        <a href="vps.html#nvme">⚡ Window VPS</a>
       </div>
     </div>
     <div class="nav-item"><a href="dedicated.html">Dedicated</a></div>
@@ -823,16 +813,12 @@ footer{background:#03030d;border-top:1px solid var(--border);padding:60px 60px 2
     <div class="nav-item">
       <a href="#">Support <span class="arr">▾</span></a>
       <div class="dropdown">
-        <a href="support.html">📚 Help Center</a>
-        <a href="support.html#ticket">🎫 Submit Ticket</a>
-        <a href="support.html#chat">💬 Live Chat</a>
-        <a href="#" onclick="showToast('💬 Discord opening...','blue');return false;">🎮 Discord</a>
+        <a href="https://discord.gg/SxUVewXjUx" onclick="showToast('💬 Discord opening...','blue');return false;">🎮 Discord</a>
         <a href="status.html">📡 Server Status</a>
       </div>
     </div>
   </div>
   <div class="nav-right">
-    <a href="login.html" class="nav-login">Login</a>
     <a href="login.html#signup" class="nav-signup">Get Started →</a>
     <div class="hamburger" id="hamburger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -864,83 +850,14 @@ footer{background:#03030d;border-top:1px solid var(--border);padding:60px 60px 2
     </div>
     <div class="hero-services-label">Our Popular Hosting Services</div>
     <div class="hero-chips">
-      <a href="games.html#minecraft" class="chip"><span>⛏️</span> Minecraft</a>
-      <a href="games.html#rust" class="chip"><span>🔫</span> Rust</a>
-      <a href="games.html#ark" class="chip"><span>🦕</span> ARK</a>
-      <a href="games.html#fivem" class="chip"><span>🏙️</span> FiveM</a>
-      <a href="games.html#valheim" class="chip"><span>🌊</span> Valheim</a>
-      <a href="games.html#dayz" class="chip"><span>☠️</span> DayZ</a>
+      <a href="games.html#minecraft" class="chip"><span>⛏️</span> Budget-Minecraft</a>
+      <a href="games.html#valheim" class="chip"><span>🌊</span> Premium-Minecraft</a>
+      <a href="games.html#rust" class="chip"><span>🔫</span> VPS</a>
+      <a href="games.html#ark" class="chip"><span>🦕</span> BOT</a>
+      <a href="games.html#fivem" class="chip"><span>🏙️</span> Domain</a>
     </div>
   </div>
-  <div class="hero-right" id="heroRight">
-    <div class="h-panel">
-      <div class="hp-head">
-        <div class="hp-head-title">⚡ Live Servers</div>
-        <div class="hp-tabs">
-          <div class="hp-tab on" onclick="switchTab(this,'pane-games')">Top Games</div>
-          <div class="hp-tab" onclick="switchTab(this,'pane-plans')">By Plans</div>
-        </div>
-      </div>
-      <div id="pane-games" class="hp-pane">
-        <div class="hp-rows">
-          <div class="hp-row" onclick="window.location='games.html#minecraft'">
-            <div class="hp-icon">⛏️</div>
-            <div class="hp-info"><div class="hp-name">Minecraft Java</div><div class="hp-sub">Unlimited Player Slots</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹149/mo</div><div class="hp-badge badge-hot">🔥 Hot</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='games.html#rust'">
-            <div class="hp-icon">🔫</div>
-            <div class="hp-info"><div class="hp-name">Rust</div><div class="hp-sub">Up to 200 Players</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹399/mo</div><div class="hp-badge badge-new">New</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='games.html#fivem'">
-            <div class="hp-icon">🏙️</div>
-            <div class="hp-info"><div class="hp-name">FiveM (GTA V)</div><div class="hp-sub">Up to 512 Players</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹499/mo</div><div class="hp-badge badge-sale">Sale</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='games.html#ark'">
-            <div class="hp-icon">🦕</div>
-            <div class="hp-info"><div class="hp-name">ARK: Survival</div><div class="hp-sub">Up to 100 Players</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹349/mo</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='games.html#valheim'">
-            <div class="hp-icon">🌊</div>
-            <div class="hp-info"><div class="hp-name">Valheim</div><div class="hp-sub">Up to 64 Players</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹299/mo</div></div>
-          </div>
-        </div>
-      </div>
-      <div id="pane-plans" class="hp-pane hidden">
-        <div class="hp-rows">
-          <div class="hp-row" onclick="window.location='pricing.html#starter'">
-            <div class="hp-icon">💎</div>
-            <div class="hp-info"><div class="hp-name">Starter</div><div class="hp-sub">2 GB RAM • 15 GB NVMe</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹149/mo</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='pricing.html#pro'">
-            <div class="hp-icon">⚡</div>
-            <div class="hp-info"><div class="hp-name">Pro</div><div class="hp-sub">4 GB RAM • 30 GB NVMe</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹299/mo</div><div class="hp-badge badge-hot">Popular</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='pricing.html#ultra'">
-            <div class="hp-icon">🔥</div>
-            <div class="hp-info"><div class="hp-name">Ultra</div><div class="hp-sub">8 GB RAM • 60 GB NVMe</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹499/mo</div></div>
-          </div>
-          <div class="hp-row" onclick="window.location='pricing.html#elite'">
-            <div class="hp-icon">👑</div>
-            <div class="hp-info"><div class="hp-name">Elite</div><div class="hp-sub">16 GB RAM • 120 GB NVMe</div></div>
-            <div class="hp-right-col"><div class="hp-price">₹899/mo</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="hp-live-bar">
-        <div class="live-dot"></div>
-        <div class="live-text">LIVE</div>
-        <div class="live-count"><span id="liveCount">4,872</span> servers online</div>
-      </div>
-    </div>
-  </div>
+  
 </section>
 
 <!-- ══════════════ TRUSTED BY ══════════════ -->
