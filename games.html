@@ -235,7 +235,15 @@ function applyFilter(){
 }
 
 /* ORDER */
-function order(game){showToast(`🛒 ${game} order page opening...`,'green');}
+function order(game) {
+    // Show a quick toast so the user knows something is happening
+    showToast(`🛒 Preparing order for ${game}...`, 'blue');
+    
+    // Redirect to billing.html after a tiny delay
+    setTimeout(() => {
+        window.location.href = `billing.html?game=${encodeURIComponent(game)}`;
+    }, 800);
+}
 
 /* HASH scroll */
 if(location.hash){const el=document.querySelector(location.hash);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth'}),500);}
