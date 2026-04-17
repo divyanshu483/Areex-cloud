@@ -251,5 +251,33 @@ if(location.hash){const el=document.querySelector(location.hash);if(el)setTimeou
 /* TOAST */
 function showToast(msg,type='blue'){const wrap=document.getElementById('toastWrap');const t=document.createElement('div');t.className='toast';const cols={blue:'rgba(20,0,255,.9)',green:'rgba(0,180,80,.9)',red:'rgba(200,0,0,.9)'};t.innerHTML=`<div class="toast-dot" style="background:${cols[type]};box-shadow:0 0 8px ${cols[type]}"></div><span>${msg}</span>`;wrap.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>t.classList.add('show')));setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),350);},4000);}
 </script>
+<script>
+    // 1. Disable Right-Click
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    // 2. Disable Keyboard Shortcuts for Inspect Element
+    document.onkeydown = function(e) {
+        // Disable F12
+        if(event.keyCode == 123) {
+            return false;
+        }
+        // Disable Ctrl+Shift+I (Inspect)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // Disable Ctrl+Shift+C (Inspect Element)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        // Disable Ctrl+Shift+J (Console)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // Disable Ctrl+U (View Source)
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    };
+</script>
 </body>
 </html>
