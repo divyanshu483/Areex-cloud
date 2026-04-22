@@ -116,7 +116,7 @@
             <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
         </div>
         <p id="couponMsg" style="font-size: 11px; margin-top: 10px; font-weight: 500;"></p>
-
+        <input type="email" id="userEmail" class="coupon-input" placeholder="Enter your email" required>
         <button class="pay-btn" onclick="openRazorpay()">Proceed to Pay</button>
         
         <p style="text-align: center; font-size: 11px; color: var(--muted); margin-top: 20px;">
@@ -203,22 +203,42 @@
     }
 
     function openRazorpay() {
-        const finalAmt = parseFloat(document.getElementById('totalPrice').innerText.replace('₹', ''));
-        var options = {
-            "key": "rzp_live_SeYO7rcBN9pXX8", 
-            "amount": (finalAmt * 100).toFixed(0), 
-            "currency": "INR",
-            "name": "Areex Cloud",
-            "description": "Payment for " + game + " Plan",
-            "image": "https://i.pinimg.com/736x/2c/bd/ac/2cbdacaeccf3c913c2ba91dcb2e63046.jpg",
-            "handler": function (response){
-                alert("Payment Successful! ID: " + response.razorpay_payment_id);
-            },
-            "prefill": { "name": "Customer", "email": "user@areexcloud.com" },
-            "theme": { "color": "#1400ff" }
-        };
-        new Razorpay(options).open();
+    const email = document.getElementById("userEmail").value;
+
+    if (!email) {
+        alert("Please enter your email");
+        return;
     }
+
+    const finalAmt = parseFloat(document.getElementById('totalPrice').innerText.replace('₹', ''));
+
+    var options = {
+        "key": "rzp_live_SeYO7rcBN9pXX8",
+        "amount": (finalAmt * 100).toFixed(0),
+        "currency": "INR",
+        "name": "Areex Cloud",
+        "description": "Payment for " + game + " Plan",
+        "image": "https://i.pinimg.com/736x/2c/bd/ac/2cbdacaeccf3c913c2ba91dcb2e63046.jpg",
+
+        "handler": function (response){
+            alert("Payment Successful!");
+        },
+
+        "prefill": {
+            "name": "Customer",
+            "email": email   // ✅ dynamic email
+        },
+
+        "notes": {
+            "email": email,  // ✅ VERY IMPORTANT (goes to webhook)
+            "plan": game
+        },
+
+        "theme": { "color": "#1400ff" }
+    };
+
+    new Razorpay(options).open();
+}
 
     render();
 </script>
